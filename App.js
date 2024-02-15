@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: Platform.OS === 'android' ? '#e0e0e0' : 'transparent', // Basic color style specific for Android
   },
   heading: {
-    marginTop: typeof window !== 'undefined' ? -200 : (Platform.OS === 'ios' ? -500 :   (Platform.OS === 'android' ? -300 : 0)), // Adjust marginTop for web, iOS, and Android
+    marginTop: typeof window !== 'undefined' ? -200 : (Platform.OS === 'ios' ? 500 :   (Platform.OS === 'android' ? -300 : 0)), // Adjust marginTop for web, iOS, and Android
     marginBottom: 50,
     fontSize: 30,
     color: '#6200EE', // Basic color style
@@ -65,7 +65,12 @@ const styles = StyleSheet.create({
       ...Platform.select({
         android: {
           position: "absolute",
-          top: 260,left: 168,
+          top: 310,left: 169,
+          transform: [{ scale: 5 }],
+        },
+        ios: {
+          position: "absolute",
+          top: 400,left: 169,
           transform: [{ scale: 5 }],
         },
         web: {
